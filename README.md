@@ -16,6 +16,12 @@ Install this repository as an Agent Plugin in a client that supports the
 https://github.com/brief-hq/brief-agent-plugin
 ```
 
+Client-specific source installs:
+
+- GitHub Copilot CLI: `copilot plugin install brief-hq/brief-agent-plugin`
+- VS Code: run **Chat: Install Plugin From Source**, then paste the repository URL
+- Kiro: open **Powers**, choose the GitHub install option, then paste the repository URL
+
 When your client first connects to Brief, it opens a browser so you can sign in
 and choose your workspace. You do not need to create or paste an API key.
 
@@ -37,6 +43,10 @@ workspace, ask for strategic guidance, and record decisions.
 - A Brief skill that guides your agent during product and engineering work.
 - A secure connection to Brief at `https://app.briefhq.ai/mcp`.
 - Browser-based sign-in handled by your client.
+
+The standard connection file is `mcp.json`. The package also includes the
+equivalent `.mcp.json` filename used by released VS Code, GitHub Copilot, and
+OpenClaw plugin hosts.
 
 The plugin contains no credentials. Access is limited to the Brief workspace
 you authorize.

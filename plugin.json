@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "brief",
+  "version": "1.0.0",
+  "description": "Give AI coding agents access to your product strategy, customer research, decisions, and current priorities through Brief.",
+  "author": {
+    "name": "Brief",
+    "email": "support@briefhq.ai",
+    "url": "https://briefhq.ai"
+  },
+  "homepage": "https://briefhq.ai",
+  "repository": "https://github.com/brief-hq/brief-agent-plugin",
+  "license": "ISC",
+  "keywords": ["product-management", "decisions", "context", "mcp", "product-context", "strategy"]
+}

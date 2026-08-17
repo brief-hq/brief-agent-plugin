@@ -16,11 +16,16 @@ Install this repository as an Agent Plugin in a client that supports the
 https://github.com/brief-hq/brief-agent-plugin
 ```
 
-Client-specific source installs:
+Verified source install:
 
 - GitHub Copilot CLI: `copilot plugin install brief-hq/brief-agent-plugin`
-- VS Code: run **Chat: Install Plugin From Source**, then paste the repository URL
-- Kiro: open **Powers**, choose the GitHub install option, then paste the repository URL
+
+The released artifact loads the Brief skill and MCP server in GitHub Copilot
+CLI. Full OAuth and tool-call verification is still pending.
+
+VS Code and Kiro source installs are not yet verified from the released
+artifact. Until their verification passes, configure Brief as a remote MCP
+server at `https://app.briefhq.ai/mcp` instead.
 
 When your client first connects to Brief, it opens a browser so you can sign in
 and choose your workspace. You do not need to create or paste an API key.

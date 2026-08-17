@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2
+
+- Teach agents when to consult Brief for product advice and consequential
+  decisions, when to load onboarding context deliberately, and when routine
+  implementation work does not need Brief.
+- Add the check-before-create workflow for searching, validating, and recording
+  product decisions with explicit approval.
+- Make this package an automatically synced, tagged public distribution from
+  Brief's canonical source repository.
+
 ## 1.0.1
 
 - Document source installation in GitHub Copilot CLI, VS Code, and Kiro.

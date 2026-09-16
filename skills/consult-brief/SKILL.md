@@ -24,6 +24,11 @@ Run from the worktree root. Nothing local has to be running: the command posts s
 API. The conversation is resolved for you — the worktree's own pointer, opened on the first turn
 when there is none — and the branch name supplies the ticket.
 
+Before the first worktree consultation, check `brief ask --help` for `--as-agent`, `--harness`,
+`--ticket`, and `--intent`. If any are missing, report `command -v brief` and `brief --version`;
+update the installation selected by `PATH` before continuing. Another global installation can
+be newer while an older executable in `~/.local/bin` still wins.
+
 ```bash
 brief ask --as-agent --harness claude-code "one clear question, with the file paths or diff summary it needs"
 ```

@@ -37,15 +37,18 @@ If the host exposes MCP prompts, `brief-setup`, `brief-welcome-back`, and `brief
 - To learn whether something was already decided, use `brief_search` and search decisions.
 - For open-ended product advice or option evaluation, use `brief_ask` with `mode: "advise"`.
 - To validate a concrete proposal, use `brief_ask` with `mode: "check"`. State the proposed direction and meaningful tradeoffs explicitly.
-- After the user or team settles a consequential choice, use `brief_record_decision` with the decision and rationale.
+- After the user or team settles a consequential choice themselves, use `brief_record_decision` with the decision and rationale.
+- When a decision needs **someone else's** sign-off, or isn't settled yet, use `brief_propose_decision` instead — it creates a pending proposal directly, without depending on an approval-card-capable host. Never record an unsettled decision as confirmed and phrase it as a question instead; propose it. If multiple people must sign off, propose once per approver.
 
 ## Decision discipline
 
 Check before creating: search for existing decisions and validate the proposal before recording a new one.
 
-Record the outcome, not the brainstorm. Do not record tentative options, routine implementation details, or choices still under discussion.
+Record the outcome, not the brainstorm. Do not record tentative options, routine implementation details, or choices still under discussion — propose those instead if they need someone's sign-off.
 
-Let Brief's approval flow present the proposed decision to the user. Do not claim it is recorded until the user approves it.
+Example: asked to "get sign-off from Drew on using JWT for auth," use `brief_propose_decision`, not `brief_record_decision`.
+
+Let Brief's approval flow present the recorded decision to the user when using `brief_record_decision`. Do not claim it is recorded until the user approves it.
 
 If Brief reports a conflict, surface that conflict before proceeding. Do not silently override an existing decision.
 

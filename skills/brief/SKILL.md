@@ -59,7 +59,7 @@ Example: asked to "get sign-off from Drew on offering a free plan," use `brief_p
 
 Let Brief's approval flow present the recorded decision to the user when using `brief_record_decision`. Do not claim it is recorded until the user approves it.
 
-For a coding-session-scoped lasting rule, use the `coding_session_key` returned by `brief_ask` as `isolation_key`. For a named experiment, use that experiment’s identifier. Pass the key on writes and read the same scope through `brief_execute_operation` with `operation: "search_decisions"` and `parameters: { isolation_key: "<key>" }`. The direct `brief_search` tool does not accept an explicit key. Leave isolated decisions unchanged and ask a person to review any request to make them shared.
+For a coding-session-scoped lasting rule, use the `coding_session_key` returned by `brief_ask` as `isolation_key`. For a named experiment, use that experiment’s identifier. Pass the key on writes and read the same scope through `brief_read_operation` with `operation: "search_decisions"` and `parameters: { isolation_key: "<key>" }`. The direct `brief_search` tool does not accept an explicit key. Leave isolated decisions unchanged and ask a person to review any request to make them shared.
 
 If Brief reports a conflict, surface that conflict before proceeding. Do not silently override an existing decision.
 

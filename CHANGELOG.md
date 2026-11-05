@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 — 2026-11-04
+
+- Route named workspace reads and writes through separate MCP tools.
+
 ## 1.0.2
 
 - Teach agents when to consult Brief for product advice and consequential

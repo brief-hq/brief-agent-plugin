@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "brief",
-  "version": "1.0.3",
-  "description": "Give AI coding agents access to your product strategy, customer research, decisions, and current priorities through Brief.",
+  "version": "1.0.4",
+  "description": "Brief is a product strategy agent that answers from the workspace's decisions, personas, strategy, customers, and competitive landscape.",
   "author": {
-    "name": "Brief",
+    "name": "Brief Labs Inc.",
     "email": "support@briefhq.ai",
-    "url": "https://briefhq.ai"
+    "url": "https://usebrief.com"
   },
-  "homepage": "https://briefhq.ai",
+  "homepage": "https://usebrief.com",
   "repository": "https://github.com/brief-hq/brief-agent-plugin",
   "license": "ISC",
   "keywords": [
@@ -18,5 +18,90 @@
     "mcp",
     "product-context",
     "strategy"
-  ]
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Brief",
+        "shortDescription": "Product strategy agent",
+        "longDescription": "Brief is a product strategy agent that answers from the workspace's decisions, personas, strategy, customers, and competitive landscape.\n\nProduct teams and coding agents use Brief to load product context, ask for recommendations, check a proposed direction against existing decisions, search workspace knowledge, and record decisions after the user approves them. When you ask it to, Brief can also create, update, or delete workspace data and act in the integrations your workspace has connected.\n\nBrief needs a Brief account. It acts within your permissions, in the workspace you sign in to and that workspace's connected integrations. It does not edit or run code in your local repository.",
+        "developerName": "Brief Labs Inc.",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Answer product strategy questions",
+          "Check proposals against decisions",
+          "Search workspace knowledge",
+          "Record approved decisions",
+          "Change workspace data and connected tools on request"
+        ],
+        "websiteURL": "https://usebrief.com",
+        "supportURL": "https://usebrief.com/support/",
+        "privacyPolicyURL": "https://usebrief.com/privacy-policy/",
+        "termsOfServiceURL": "https://usebrief.com/terms-of-service/",
+        "defaultPrompt": [
+          "Catch me up on our product, users, current work, and recent decisions.",
+          "What should we prioritize next, and how does it align with our existing product decisions?",
+          "Find our decisions, research signals, and features related to onboarding friction."
+        ],
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Load the full workspace context at the start of a product-planning conversation.",
+              "prompt": "Catch me up on our product, users, current work, and recent decisions.",
+              "tools_triggered": "brief_get_onboarding_context",
+              "expected_behavior": "Returns a structured strategic snapshot of the user's Brief workspace with links supplied by the tool."
+            },
+            {
+              "description": "Ask for a recommendation grounded in the team's strategy and decisions.",
+              "prompt": "What should we prioritize next, and how does it align with our existing product decisions?",
+              "tools_triggered": "brief_ask",
+              "expected_behavior": "Provides a concise, reasoned recommendation grounded in workspace context and cites relevant decision identifiers when available."
+            },
+            {
+              "description": "Search across product knowledge for a specific topic.",
+              "prompt": "Find our decisions, research signals, and features related to onboarding friction.",
+              "tools_triggered": "brief_search",
+              "expected_behavior": "Returns a ranked set of matching Brief entities with types, titles, snippets, and workspace links."
+            },
+            {
+              "description": "Capture a confirmed product decision through the required approval experience.",
+              "prompt": "Record the decision that we will prioritize activation before adding more integrations because retention is the current constraint.",
+              "tools_triggered": "brief_record_decision",
+              "expected_behavior": "Shows the decision approval card and waits for explicit user approval before creating the decision."
+            },
+            {
+              "description": "Show the integrations available for product and engineering workflows.",
+              "prompt": "Show me which development integrations I can connect to Brief.",
+              "tools_triggered": "brief_show_integrations",
+              "expected_behavior": "Displays the relevant integration cards with current connection state and user-initiated connection actions."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not trigger Brief for an unrelated weather request.",
+              "prompt": "What will the weather be in Seattle tomorrow?",
+              "expected_behavior": "The plugin should not be invoked because weather is outside its supported workflows."
+            },
+            {
+              "description": "Do not trigger Brief to modify local source code.",
+              "prompt": "Refactor the authentication middleware in my local repository and run its tests.",
+              "expected_behavior": "The plugin should not be invoked because Brief does not edit or execute code in the user's local repository."
+            },
+            {
+              "description": "Do not trigger Brief for travel booking.",
+              "prompt": "Book me a nonstop flight to New York next Friday.",
+              "expected_behavior": "The plugin should not be invoked because travel search and booking are outside its supported workflows."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Updates the publisher and listing details, and adds the Brief skill."
+      }
+    }
+  }
 }

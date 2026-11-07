@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4 — 2026-11-06
+
+- Add the ChatGPT listing details and the Brief logo.
+- Update the publisher to Brief Labs Inc. and the public links to usebrief.com.
+
 ## 1.0.3 — 2026-11-04
 
 - Route named workspace reads and writes through separate MCP tools.

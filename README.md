@@ -1,7 +1,7 @@
 # Brief Agent Plugin
 
-Give your AI coding agent the product context it needs to make better
-decisions.
+Brief is a product strategy agent that answers from the workspace's decisions,
+personas, strategy, customers, and competitive landscape.
 
 Brief connects your agent to your team's product strategy, customer research,
 past decisions, and current priorities. Your agent can check that context while
@@ -49,16 +49,20 @@ workspace, ask for strategic guidance, and record decisions.
 - A secure connection to Brief at `https://app.briefhq.ai/mcp`.
 - Browser-based sign-in handled by your client.
 
-The standard connection file is `mcp.json`. The package also includes the
-equivalent `.mcp.json` filename used by released VS Code, GitHub Copilot, and
-OpenClaw plugin hosts.
+The standard connection file is `mcp.json`. The public repository also includes
+the equivalent `.mcp.json` filename used by released VS Code, GitHub Copilot,
+and OpenClaw plugin hosts.
 
 The plugin contains no credentials. Access is limited to the Brief workspace
 you authorize.
 
 ## Links
 
-- [Brief](https://briefhq.ai)
+- [Brief](https://usebrief.com)
+- [Documentation](https://usebrief.com/docs/mcp-setup/)
+- [Support](https://usebrief.com/support/) or support@briefhq.ai
+- [Privacy Policy](https://usebrief.com/privacy-policy/)
+- [Terms of Service](https://usebrief.com/terms-of-service/)
 - [Agent Plugins](https://agent-plugins.org/)
 - [Agent Plugins compatible clients](https://agent-plugins.org/compatible-clients)
 

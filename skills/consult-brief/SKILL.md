@@ -47,6 +47,12 @@ carry no credential of your own — the one the human signed in with is the one 
 ## Then
 
 - Quote the decision ids (D-NNN) Brief cites, in your plan, your commits and your pull request.
+- Cite a Brief answer by the `conversation_id` and `request_id` that `brief ask` printed, always
+  together. `brief conversations get <conversation_id> --turn <request_id>` shows that turn's
+  question and answer, but only to the person whose credential asked: conversations are private
+  to their creator, so a reviewer cannot open yours. When an answer justifies a scope cut, a
+  dropped or reworded criterion, or a coverage change, also quote Brief's deciding sentences in
+  the pull request body, copied verbatim from the `answer` field, not paraphrased.
 - Post status back when you finish a step Brief asked about:
   `brief ask --as-agent --intent status "Status: ..."`.
 - Before opening a pull request:
